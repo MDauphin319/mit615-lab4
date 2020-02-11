@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'will_paginate', '~> 3.1.0'
+gem 'pg', '~> 0.21'
 gem 'faker'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
@@ -12,7 +14,6 @@ gem 'bootstrap_form'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4'
 # Use Puma as the app server
-gem 'sqlite3'
 gem 'puma'
 # Use SCSS for stylesheets
 gem 'sass-rails'
@@ -41,6 +42,10 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara'
   gem 'selenium-webdriver'
+end
+
+group :production do
+  gem 'rails_12factor', group: :production
 end
 
 group :development do
